@@ -23,7 +23,7 @@ for opt, arg in opts:
         angular_mode = True
     if opt in ('-h', '--help'):
         print(HELP)
-        exit(0)
+        sys.exit(0)
 if len(args) >= 1:
     filename = os.path.abspath(args[0])
     args = args[1:]
@@ -71,4 +71,5 @@ clean_namespaces(root, None)
 clean_invisibles(root, None)
 if angular_mode:
     clean_flow(root, None)
-tree.write('output.svg')
+tree.write(sys.stdout.buffer)
+print()

@@ -18,7 +18,3 @@ Prints the help message
 
 #### `-a, --angular`
 Enables Angular mode
-
-## TODO
-
-* Print to standard output to be more POSIX-like.
