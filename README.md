@@ -6,4 +6,5 @@ Small Python tool which converts an SVG file into its most barebones version, fo
 
 ## TODO
 
-Create an Angular mode which removes flowRoot elements.
+* Create an Angular mode which removes flowRoot elements.
+* Print to standard output to be more POSIX-like.
