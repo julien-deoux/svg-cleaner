@@ -31,5 +31,13 @@ def clean_namespaces(element: ET.Element, parent: ET.Element):
         else:
             parent.remove(element)
 
+def clean_invisibles(element: ET.Element, parent: ET.Element):
+    if 'style' in element.attrib and element.attrib['style'] == "display:none":
+        parent.remove(element)
+    else:
+        for child in list(element):
+            clean_invisibles(child, element)
+
 clean_namespaces(root, None)
+clean_invisibles(root, None)
 tree.write('output.svg')
